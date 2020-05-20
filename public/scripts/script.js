@@ -13,18 +13,16 @@ function getClients() {
 
       clientList.forEach(client => {
         let clientElement = 
-          `<div class="client" id=${client.id}>
-              <button>Editar</button>
-              <button>Remover</button>
-              <span class="idClient">ID: id=${client.id}</span>
-              <span>Nome: <a href="#">${client.name}</a></span>
-              <p>Descrição: ${client.description}</p>
-            </div>`;
+          ` <ul class="cardCli" id=${client.id}>
+              <li class="cat">${client.id}</li>
+              <li class="cat">${client.name}</li>
+              <li class="cat">${client.description}</li>
+            </ul>`;
 
         clients += clientElement;
       });
 
-      document.getElementById('clients').innerHTML = clients;
+      document.getElementById('LIST_CLI').innerHTML = clients;
     });
 }
 
