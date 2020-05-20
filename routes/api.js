@@ -13,6 +13,6 @@ router.post('/novo', bodyParser.json(), (req, res) => {
 
   clientes.newClient(name, description);
   res.send({status: 200, msg: 'Cliente cadastrado com sucesso!'});
-})
+});
 
 module.exports = router;
