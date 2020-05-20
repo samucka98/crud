@@ -27,22 +27,24 @@ function getClients() {
 }
 
 
-function newPost() {
-  let title = document.getElementById('title').value;
-  let description = document.getElementById('desc').value;
+function newClient() {
+  let name = document.getElementById('name').value;
+  let description = document.getElementById('description').value;
 
-  let post = {title, description};
+  let client = {name, description};
 
   const options = {
     method: 'POST',
     headers: new Headers({'content-type': 'application/json'}),
-    body: JSON.stringify(post)
+    body: JSON.stringify(client)
   }
 
-  fetch('http://localhost:5000/api/new', options)
+  fetch('http://localhost:5000/api/novo', options)
     .then(res => {
-      updatePosts();
-      document.getElementById('title').value = '';
-      document.getElementById('desc').value = '';
+      getClients();
+      document.getElementById('name').value = '';
+      document.getElementById('description').value = '';
+
+      alert('Novo cliente cadastrado com sucesso!');
     })
 }
